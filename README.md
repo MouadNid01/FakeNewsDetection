@@ -9,8 +9,8 @@ The official website of the dataset :
 
 ### Neural network architecture
 
-*Coming soon*
+**Coming soon**
 
 ### References
 
-*Coming soon*
+**Coming soon**
