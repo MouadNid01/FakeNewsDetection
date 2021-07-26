@@ -23,6 +23,7 @@ The official website of the dataset :
 ### Model evaluation
 
 * Confusion matrix
+
 ![matrix](https://github.com/MouadNid01/FakeNewsDetection/blob/main/Confusion_matrix.png?raw=true)
 
 ### References
