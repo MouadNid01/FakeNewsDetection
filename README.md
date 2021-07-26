@@ -22,9 +22,9 @@ The official website of the dataset :
 
 ### Model evaluation
 * The results of this model are as follows:
-  - Model Accuracy on the testing set : 0.9983
-  - Model Precision on the testing set : 0.9990
-  - Model Recall on the testing set :  0.9973
+  - Model Accuracy on the testing set : `0.9983`
+  - Model Precision on the testing set : `0.9990`
+  - Model Recall on the testing set :  `0.9973`
 
 * **Confusion matrix**
 
