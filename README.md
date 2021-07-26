@@ -18,7 +18,12 @@ The official website of the dataset :
 
 ### Neural network architecture
 
-**Coming soon**
+![Architecture](https://github.com/MouadNid01/FakeNewsDetection/blob/main/model_schema.png?raw=true)
+
+### Model evaluation
+
+* Confusion matrix
+![matrix](https://github.com/MouadNid01/FakeNewsDetection/blob/main/Confusion_matrix.png?raw=true)
 
 ### References
 
