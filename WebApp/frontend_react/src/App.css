@@ -1,0 +1,67 @@
+.test {
+  background-color: #363b4462;
+}
+.App-header {
+  background-image: url("./Images/Background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*justify-content: center; */
+  font-size: calc(10px + 2vmin); 
+  color: #b0e7f7;
+}
+
+.labels {
+  font-size: 22px;
+}
+
+.container {
+  width: 85%
+}
+
+.card-title {
+	margin: 1em 0 .6em 0;
+	font-weight: normal;
+	color: white;
+	font-family: 'Hammersmith One', sans-serif;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+	position: relative;
+	color: #61dafb;
+}
+
+.my-btn{
+  border-color: #61dafb;
+  color: #61dafb;
+  width : 80px; 
+}
+
+.my-btn:hover{
+  background-color: #61dafb;
+  color: white;
+}
+
+#fake {
+  background-color: rgba(255, 0, 0, 0.404);
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  height: 60px;
+
+}
+
+#true {
+  background-color: rgba(0, 255, 0, 0.404);
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  height: 60px;
+
+}
+
+
+

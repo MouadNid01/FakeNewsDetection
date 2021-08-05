@@ -20,7 +20,7 @@ The official website of the dataset :
 
 ![Architecture](https://github.com/MouadNid01/FakeNewsDetection/blob/main/model_schema.png?raw=true)
 
-### Model evaluation
+### Model Evaluation
 * The results of this model are as follows:
   - Model Accuracy on the testing set : `0.9983`
   - Model Precision on the testing set : `0.9990`
