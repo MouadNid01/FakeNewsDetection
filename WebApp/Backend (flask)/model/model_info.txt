@@ -1,0 +1,2 @@
+Last model training in: 18-Aug-2021 (17:13:54)
+The current accuracy is: 0.9474617903930131

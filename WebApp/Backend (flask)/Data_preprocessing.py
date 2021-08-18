@@ -10,7 +10,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 class Data_preprocessing:
     def __init__(self):
         self.stop_words = set(stopwords.words('english'))
-        self.Articles_path = './scraping/Articles/{}'
+        self.Articles_path = './Articles/{}'
         self.Real_article = ['Reuters_articles.json', 'TRTWorld_articles.json', 'TRTWorld_articles.json', \
                          'LaMap_articles.json']
         self.Fake_article = ['Breitbart_articles.json', 'NaturalNews_articles.json',\
@@ -59,6 +59,7 @@ class Data_preprocessing:
         
         df = pd.concat([df_real, df_fake], axis=0, ignore_index = True)
         df = shuffle(df)
+        df.drop_duplicates(inplace = True, keep='last')
         df = df.reset_index(drop= True)
         
         df['text'] = df['text'].apply(self.Clean)

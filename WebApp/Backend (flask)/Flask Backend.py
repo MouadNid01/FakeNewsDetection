@@ -1,38 +1,39 @@
+from ScrapingHandler import InitializeScraping
 from flask import Flask, json, request
 from apscheduler.schedulers.background import BackgroundScheduler
 from PredHandler import PredHandler
 from Retrain import InitializeRetraining
-import os
-os.chdir('./scraping')
-from ScrapingHandler import InitializeScraping
-os.chdir('../')
+import atexit
 
+print(__name__)
 Pred = PredHandler("./model/model1.h5")
+
+
 
 def Retrain():
     """ Function for trigring model retrainning. """
     lst = InitializeScraping()
+    print('#########################')
     if __name__ == '__main__':
+        print('again')
         for a in lst:
             a.start()
         for a in lst:
             a.join()
     
-    path = "./scraping/Links_temp/Reuters_links.txt"
-    if os.path.exists(path):
-        os.remove(path)
-        os.remove(path.replace("Reuters", "Nytimes"))
-        os.remove(path.replace("Reuters", "LaMap"))
-        os.remove(path.replace("Reuters", "TRTWorld"))
-        os.remove(path.replace("Reuters", "Breitbart"))
-        os.remove(path.replace("Reuters", "NaturalNews"))
-        os.remove(path.replace("Reuters", "Wnd"))
-    
     InitializeRetraining('./model/model1.h5')
 
+# def InitializeProcess():
+#     a1 = Process(target = Retrain)
+#     if __name__ == '__main__':
+#         a1.start()
+
 sched = BackgroundScheduler(daemon=True)
-sched.add_job(Retrain,'interval',minutes=60)
+sched.add_job(Retrain,'interval',minutes=120)
 sched.start()
+# Shut down the scheduler when exiting the app
+atexit.register(lambda: sched.shutdown())
+
 
 app = Flask(__name__)
 
@@ -47,4 +48,8 @@ def News_check():
     # returns the the result as a JSON.
     return res
 
-app.run()
+
+if __name__ == "__main__":
+    app.run()
+
+
