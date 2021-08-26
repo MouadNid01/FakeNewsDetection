@@ -5,17 +5,13 @@ from PredHandler import PredHandler
 from Retrain import InitializeRetraining
 import atexit
 
-print(__name__)
 Pred = PredHandler("./model/model1.h5")
-
-
 
 def Retrain():
     """ Function for trigring model retrainning. """
     lst = InitializeScraping()
     print('#########################')
     if __name__ == '__main__':
-        print('again')
         for a in lst:
             a.start()
         for a in lst:
@@ -23,13 +19,9 @@ def Retrain():
     
     InitializeRetraining('./model/model1.h5')
 
-# def InitializeProcess():
-#     a1 = Process(target = Retrain)
-#     if __name__ == '__main__':
-#         a1.start()
 
 sched = BackgroundScheduler(daemon=True)
-sched.add_job(Retrain,'interval',minutes=120)
+sched.add_job(Retrain,'interval',hours=2)
 sched.start()
 # Shut down the scheduler when exiting the app
 atexit.register(lambda: sched.shutdown())
@@ -48,8 +40,16 @@ def News_check():
     # returns the the result as a JSON.
     return res
 
+@app.route("/")
+def test():
+    msg = '<center> <h3> The api is working <br />'
+    with open('./model/model_info.txt', 'r') as file:
+        for line in file:
+            msg += line +'<br />'
+    msg += '</h3> </center>'
+    return msg
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
 
 

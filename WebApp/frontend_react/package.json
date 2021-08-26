@@ -1,6 +1,7 @@
 {
   "name": "frontend_react",
   "version": "0.1.0",
+  "proxy": "http://api:5000",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -15,7 +16,6 @@
     "web-vitals": "^1.1.2",
     "yup": "^0.32.9"
   },
-  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  api:
+    build: Backend (flask)
+    image: mouadnid00/fake-news-detection:api
+    command: ["flask", "run", "--host=0.0.0.0"]
+    volumes:
+      - ./Backend (flask):/backend-flask
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=Flask-Backend.py
+    ports:
+      - "5000:5000"
+
+  client:
+    build: frontend_react
+    image: mouadnid00/fake-news-detection:front
+    command: ["npm", "start"]
+    volumes:
+      - ./frontend_react:/frontend
+      - node-modules:/frontend/node_modules
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '3000:3000'
+    depends_on:
+      - api
+
+volumes:
+  node-modules:
