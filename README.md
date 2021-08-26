@@ -1,9 +1,11 @@
 # Fake News Detection
 
 ### Abstract
-This project is an end to end web application for fake news detection, the model used in this app is based on LSTM. This model  is deployed to flask API that handles the http requests from the front-end (developed with React) and sends the classification results. 
+This project is an end to end web application for fake news detection, the model used in this app is based on LSTM. This model  is deployed to flask API that handles the http requests from the front-end (developed with React) and sends the classification results.
+
 We've implemented also a retraining mechanism as a proof of concept (explained in the sections below).
-This application had benn dockerized in its available on docker hub you'll find installation instructions below. 
+
+This application had been dockerized in its available on docker hub you'll find installation instructions below. 
 
 ### Dataset
 The dataset used in this project is the ISOT fake news dataset. this dataset contains two  csv files `True.csv` and `Fake.csv`, and it contains articles from 2016 to 2017.
