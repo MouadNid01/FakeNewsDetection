@@ -12,13 +12,12 @@ The dataset used in this project is the ISOT fake news dataset. this dataset con
 * The first file named `True.csv` contains more than 12,600 articles from reuter.com.
   - True Dataset's WorldCloud
 
+<p align="center"><img src="https://github.com/MouadNid01/FakeNewsDetection/blob/main/Images/True%20dataset's%20world%20cloud.png?raw=true" /></p>
 
-![WorldCloud1](https://github.com/MouadNid01/FakeNewsDetection/blob/main/True%20dataset's%20world%20cloud.png?raw=true)
 * The second file named `Fake.csv` contains more than 12,600 articles from different fake news outlet resources.
   - Fake Dataset's WorldCloud
 
-
-![WorldCloud2](https://github.com/MouadNid01/FakeNewsDetection/blob/main/fake%20dataset's%20world%20cloud.png?raw=true)
+<p align="center"><img src="https://github.com/MouadNid01/FakeNewsDetection/blob/main/Images/Fake%20dataset's%20world%20cloud.png" /></p>
 
 
 The official website of the dataset :
@@ -26,21 +25,37 @@ The official website of the dataset :
 
 ### Neural network architecture
 
-![Architecture](https://github.com/MouadNid01/FakeNewsDetection/blob/main/model_schema.png?raw=true)
+<p align="center"><img src="https://github.com/MouadNid01/FakeNewsDetection/blob/main/Images/model_schema.png?raw=true" /></p>
 
 ### Model Evaluation
 * The results of this model are as follows:
-  - Model Accuracy on the testing set : `0.9983`
-  - Model Precision on the testing set : `0.9990`
-  - Model Recall on the testing set :  `0.9973`
+  - Model Accuracy on the testing set : `0.9989`
+  - Model Precision on the testing set : `0.9996`
+  - Model Recall on the testing set :  `0.9981`
 
 * **Confusion matrix**
+<p align="center"><img src="https://github.com/MouadNid01/FakeNewsDetection/blob/main/Images/Confusion_matrix.png?raw=true" /></p>
 
-![matrix](https://github.com/MouadNid01/FakeNewsDetection/blob/main/Confusion_matrix.png?raw=true)
+### Retraining
+In order to keep the model updated we've implemented a retraining mechanism that consits of 2 steps:
+* **Step 1:** Web scraping of the news websites
+  - The websites used for getting the reliable news are: *Reuters, Nytimes, LaMap, TrtNews*
+  - The websites used for getting the fake news are: *Breitbart, NaturalNews, Wnd.* (you can find the code for scraping the InfoWars website) as comments in FakeLinks_scraping.py. 
+* **Step 2:** After cleaning the scrapped data we test the model accuracy on it if the accuracy is below 80% we retrain the model on the new data.
 
-* **Classification report** 
+This process is summarized in the figure below.
+<p align="center"><img src="https://raw.githubusercontent.com/MouadNid01/FakeNewsDetection/main/Images/Model%20retraining.jpg" /></p>
 
-**Comming soon**
+### Intallation instructions
+This web app is available on docker hub via [link](https://hub.docker.com/repository/docker/mouadnid00/fake-news-detection/general).
+The api is available under the docker tag `api`. and the frontend under the tag `front`.
+
+To install this app use the file `docker-compose.yml` you'll find it inside the webapp folder.
+
+Then run the commands:
+
+- ```docker-compose pull``` to pull the images from the repository. NB: this command will pull both the api and the frontend from docker hub.
+- ```docker-compose up``` to run the containers.
 ### References
 
 **Coming soon**
