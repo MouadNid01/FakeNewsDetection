@@ -64,6 +64,10 @@ To install this app use the file `docker-compose.yml` you'll find it under the `
 ```
 $ docker-compose up
 ``` 
+### Api example
+
+<p align="center"><img  src="https://raw.githubusercontent.com/MouadNid01/FakeNewsDetection/main/Images/Request%20example.png" /></p>
+
 ### References
 
 **Coming soon**
