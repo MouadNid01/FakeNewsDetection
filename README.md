@@ -64,10 +64,21 @@ To install this app use the file `docker-compose.yml` you'll find it under the `
 ```
 $ docker-compose up
 ``` 
-### Api example
+### Api Documentation
+The flask api is accesible through the port `5000`. The api support two request:
+* To get classification results for any articles send a get request to: 
+```
+$ http://localhost:5000/check
+```
+The body of request should contain a the title and the text of the article.
 
+**Exemple:** this is an exemple of the request using postman.
 <p align="center"><img  src="https://raw.githubusercontent.com/MouadNid01/FakeNewsDetection/main/Images/Request%20example.png" /></p>
 
+* To get info about the model you can access this link through your browser, and you'll get info about the model such as date and time of the last model training and the current accuracy.
+```
+$ http://localhost:5000/
+```
 ### References
 
 **Coming soon**
